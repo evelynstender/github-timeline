@@ -1,6 +1,5 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
-import purple from "@material-ui/core/colors/purple";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,10 +53,18 @@ const useStyles = makeStyles((theme: Theme) =>
       left: 0,
       bottom: 0,
       width: "100%",
-      backgroundColor: purple[300],
+      backgroundColor: "#9c27b0",
       height: 40,
-      padding: theme.spacing(0.5)
+      padding: theme.spacing(0.5),
     },
+    scrollTop: {
+      position: "fixed",
+      bottom: theme.spacing(6),
+      right: theme.spacing(2),
+    },
+    loading: {
+      textAlign: "center"
+    }
   })
 );
 
@@ -65,10 +72,10 @@ const theme = createTheme({
   palette: {
     type: "dark",
     primary: {
-      main: purple[500],
+      main: "#9c27b0",
     },
     secondary: {
-      main: "#f44336",
+      main: "#d500f9",
     },
   },
 });

@@ -14,7 +14,13 @@ import {
 } from "@material-ui/lab";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-import { Typography, Paper, Link, Box } from "@material-ui/core";
+import {
+  Typography,
+  Paper,
+  Link,
+  Box,
+  CircularProgress,
+} from "@material-ui/core";
 
 import { GithubRepo } from "../../interfaces";
 import { ClassNameMap } from "@material-ui/styles";
@@ -76,8 +82,14 @@ const buildTimelineItem = (
   );
 };
 
-const loadingComponent = () => {
-  return <Box component="span">LOADING</Box>;
+const loadingComponent = (
+  classes: ClassNameMap<"loading">
+) => {
+  return (
+    <Box component="div" className={classes.loading}>
+      <CircularProgress />
+    </Box>
+  );
 };
 
 const timelineComponent = (
@@ -117,7 +129,7 @@ const GithubTimeline = () => {
   let content = <></>;
 
   if(isLoading === true) {
-    content = loadingComponent();
+    content = loadingComponent(classes);
   }
   else if(isLoading === false) {
     content = timelineComponent(repos, username, classes);

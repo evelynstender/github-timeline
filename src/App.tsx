@@ -3,6 +3,7 @@ import { SearchBar } from "./components/SearchBar";
 import { GithubTimeline } from "./components/GithubTimeline";
 import { Header } from "./components/Header"
 import { Footer } from "./components/Footer"
+import { ScrollTop } from "./components/ScrollTop";
 import { GithubRepo } from "./interfaces";
 
 import { useStyles, theme } from "./styles";
@@ -12,7 +13,11 @@ import { ThemeProvider } from "@material-ui/styles";
 import {
   Grid,
   CssBaseline,
+  Fab
 } from "@material-ui/core";
+
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+
 
 
 import AppStore from "./store"
@@ -45,9 +50,14 @@ const App = () => {
             <SearchBar />
           </Grid>
           <Grid item className={classes.gridItem}>
-              <GithubTimeline />
+            <GithubTimeline />
           </Grid>
         </Grid>
+        <ScrollTop>
+          <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
         <Footer />
       </ThemeProvider>
     </AppStore.Provider>

@@ -16,16 +16,23 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="fixed">
-      <Toolbar>
-        <Typography align="center" className={classes.header} variant="h5">
-          Github Timeline
-        </Typography>
-        <IconButton href="https://github.com/evelynstender/github-timeline" rel="noreferrer" target="_blank">
-          <GitHubIcon />
-        </IconButton>
-      </Toolbar>
-    </AppBar>
+    <>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography align="center" className={classes.header} variant="h5">
+            Github Timeline
+          </Typography>
+          <IconButton
+            href="https://github.com/evelynstender/github-timeline"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <GitHubIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Toolbar id="back-to-top-anchor" />
+    </>
   );
 };
 
