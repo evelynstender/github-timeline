@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Link, Typography } from "@material-ui/core";
+import { Box, Link, Typography } from '@material-ui/core';
 
-import { useStyles } from "../../styles";
+import { useStyles } from '../../styles';
 
-const Footer = () => {
+const Footer = () :JSX.Element => {
   const classes = useStyles();
 
   return (
     <Box component="div" className={classes.footer}>
       <Typography align="center" variant="h6">
-        Made with ❤️ by{" "}
+        Made with <span role="img" aria-label="heart">❤️</span> by{" "}
         <Link
           color="textSecondary"
           href="https://evelynstender.com"

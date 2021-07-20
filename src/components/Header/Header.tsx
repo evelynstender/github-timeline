@@ -1,18 +1,17 @@
-import React from "react";
+import React from 'react';
 
 import {
   AppBar,
   Toolbar,
   Typography,
-  IconButton
-} from "@material-ui/core";
+  IconButton,
+} from '@material-ui/core';
 
-import GitHubIcon from "@material-ui/icons/GitHub";
+import GitHubIcon from '@material-ui/icons/GitHub';
 
+import { useStyles } from '../../styles';
 
-import { useStyles } from "../../styles"
-
-const Header = () => {
+const Header = () : JSX.Element => {
   const classes = useStyles();
 
   return (

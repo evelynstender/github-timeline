@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from "react";
 
-import {Store} from "./interfaces"
+import { Store } from "./interfaces";
 
 const AppStore = React.createContext<Store>({
   repos: [],

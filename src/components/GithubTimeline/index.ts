@@ -1,5 +1,5 @@
-import GithubTimeline from "./GithubTimeline";
+import GithubTimeline from './GithubTimeline';
 
 export {
   GithubTimeline,
-}
+};

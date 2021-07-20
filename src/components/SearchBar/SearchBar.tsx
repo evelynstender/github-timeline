@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { TextField, Button, Box } from "@material-ui/core";
+import React, { useState } from 'react';
+import { TextField, Button, Box } from '@material-ui/core';
 
-import { searchUserRepos } from "../../helpers/github";
+import { searchUserRepos } from '../../helpers/github';
 
-import { useStyles } from "../../styles";
+import { useStyles } from '../../styles';
 
-import AppStore from "../../store";
+import AppStore from '../../store';
 
-const SearchBar = () => {
+const SearchBar = () : JSX.Element => {
   const classes = useStyles();
 
-  const [githubUsername, setGihubUsername] = useState("");
+  const [githubUsername, setGihubUsername] = useState('');
 
-  const { setRepos, setUsername, setIsLoading, setError } = React.useContext(AppStore);
+  const {
+    setRepos, setUsername, setIsLoading, setError,
+  } = React.useContext(AppStore);
 
   const handleSearch = () => {
     setIsLoading(true);
@@ -29,7 +31,6 @@ const SearchBar = () => {
         console.error(error);
         setError(true);
         setIsLoading(false);
-
       });
   };
 

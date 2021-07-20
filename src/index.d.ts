@@ -1,1 +1,1 @@
-declare module "react-emojione";
+declare module 'react-emojione';

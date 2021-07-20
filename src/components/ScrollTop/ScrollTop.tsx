@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import { useStyles } from "../../styles";
-import { Zoom, useScrollTrigger } from "@material-ui/core";
+import { Zoom, useScrollTrigger } from '@material-ui/core';
+import { useStyles } from '../../styles';
 
 interface Props {
   children: React.ReactElement;
 }
 
-const ScrollTop = ({ children }: Props) => {
+const ScrollTop = ({ children }: Props) : JSX.Element => {
   const classes = useStyles();
 
   const trigger = useScrollTrigger({
@@ -19,10 +19,10 @@ const ScrollTop = ({ children }: Props) => {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector("#back-to-top-anchor");
+    ).querySelector('#back-to-top-anchor');
 
     if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
