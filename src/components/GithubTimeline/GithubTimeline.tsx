@@ -11,6 +11,8 @@ import {
   TimelineConnector,
   TimelineContent,
   TimelineDot,
+  Alert,
+  AlertTitle,
 } from "@material-ui/lab";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
@@ -82,9 +84,17 @@ const buildTimelineItem = (
   );
 };
 
-const loadingComponent = (
-  classes: ClassNameMap<"loading">
-) => {
+const errorComponent = (username: string) => {
+  return (
+    <Alert variant="filled" severity="error">
+      <AlertTitle>Error</AlertTitle>
+      Could not get repositories from <strong>{username}</strong>. Are you sure
+      this user exists?
+    </Alert>
+  );
+};
+
+const loadingComponent = (classes: ClassNameMap<"loading">) => {
   return (
     <Box component="div" className={classes.loading}>
       <CircularProgress />
@@ -123,19 +133,20 @@ const timelineComponent = (
 const GithubTimeline = () => {
   const classes = useStyles();
 
-  const { username, repos, isLoading } = React.useContext(AppStore);
-
+  const { username, repos, isLoading, error } = React.useContext(AppStore);
 
   let content = <></>;
 
-  if(isLoading === true) {
-    content = loadingComponent(classes);
+  if (error) {
+    content = errorComponent(username);
+  } else {
+    if (isLoading === true) {
+      content = loadingComponent(classes);
+    }
+    if (isLoading === false) {
+      content = timelineComponent(repos, username, classes);
+    }
   }
-  else if(isLoading === false) {
-    content = timelineComponent(repos, username, classes);
-  }
-
-
 
   return (
     <Box component="div" className={classes.timelineWrapper}>

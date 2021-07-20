@@ -9,6 +9,8 @@ const AppStore = React.createContext<Store>({
   setUsername: () => {},
   isLoading: undefined,
   setIsLoading: () => {},
+  error: false,
+  setError: () => {},
 });
 
 export default AppStore;

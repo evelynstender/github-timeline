@@ -12,19 +12,24 @@ const SearchBar = () => {
 
   const [githubUsername, setGihubUsername] = useState("");
 
-  const { setRepos, setUsername, setIsLoading } = React.useContext(AppStore);
+  const { setRepos, setUsername, setIsLoading, setError } = React.useContext(AppStore);
 
   const handleSearch = () => {
     setIsLoading(true);
+    setError(false);
     setUsername(githubUsername);
     setRepos([]);
     searchUserRepos(githubUsername)
       .then((repos) => {
         setRepos(repos);
         setIsLoading(false);
+        setError(false);
       })
       .catch((error) => {
-        console.log("errou", error);
+        console.error(error);
+        setError(true);
+        setIsLoading(false);
+
       });
   };
 

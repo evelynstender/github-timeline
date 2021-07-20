@@ -14,4 +14,6 @@ export type Store = {
   setUsername: React.Dispatch<React.SetStateAction<string>>;
   isLoading?: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean | undefined>>;
+  error: boolean;
+  setError: React.Dispatch<React.SetStateAction<boolean>>;
 };

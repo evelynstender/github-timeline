@@ -30,6 +30,7 @@ const App = () => {
   const [repos, setRepos] = useState<GithubRepo[]>([]);
   const [username, setUsername] = useState<string>("")
   const [isLoading, setIsLoading] = useState<boolean | undefined>(undefined);
+  const [error, setError] = useState<boolean>(false);
 
   return (
     <AppStore.Provider
@@ -40,6 +41,8 @@ const App = () => {
         setUsername,
         isLoading,
         setIsLoading,
+        error,
+        setError
       }}
     >
       <ThemeProvider theme={theme}>
