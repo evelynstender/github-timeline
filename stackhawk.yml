@@ -1,0 +1,8 @@
+# -- stackhawk configuration for github-timeline --
+app:
+  # -- An applicationId obtained from the StackHawk platform. --
+  applicationId: d7c4f103-1703-4d9b-921d-99735f702630
+  # -- The environment for the applicationId defined in the StackHawk platform. --
+  env: Production
+  # -- The url of your application to scan --
+  host: http://localhost:3000
