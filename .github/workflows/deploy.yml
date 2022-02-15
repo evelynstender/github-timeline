@@ -7,6 +7,10 @@ on:
     types:
       - completed
 jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Starting deploy'
   deploy:
     needs: [build-and-test, lint]
     runs-on: ubuntu-latest
